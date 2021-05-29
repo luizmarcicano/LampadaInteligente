@@ -1,8 +1,3 @@
-<!--
- CANAL INTERNET E COISAS
- Cliente MQTT em JavaScript
- 05/2019 - Andre Michelon
--->
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -134,7 +129,7 @@
         dataSom.setValue(0, 1, msg.payloadString);
         chartSom.draw(dataSom, optionsSom);
       } else if (msg.destinationName == "dealer/status") {
-        // Toggle
+        // Status
         var t = document.getElementById("toggle");
         if (msg.payloadString == 1) {
           t.innerText = "Status do Sensor de Som: Ligado   Temporizador:  ";
@@ -145,7 +140,7 @@
         }
       } else if (msg.destinationName == "dealer/timer") {
     	  if (msg.payloadString == 1) {
-    		  document.getElementById("bomba").checked = true;
+    		  document.getElementById("check").checked = true;
             } else {
               t.innerText = "Status do Sensor de Som: Desligado Temporizador: n/d";
               t.style.background = "rgb(227, 0, 14)";
@@ -260,12 +255,10 @@
 	  	mqtt.send(message);
     };
     
-    if (document.getElementById("bomba").checked == true && document.getElementById("time").innerText == "00:00"){
-    	document.getElementById("bomba").checked = false;
+    if (document.getElementById("check").checked == true && document.getElementById("time").innerText == "00:00"){
+    	document.getElementById("check").checked = false;
     	document.getElementById("time").innerText = "02:00";
-    	  client.subscribe("World");
     	  message = new Paho.MQTT.Message("0");
-    	  message = new Paho.MQTT.Message("1");
     	  message.destinationName = "dealer/timer";
     	  client.send(message);
     }
@@ -288,7 +281,7 @@
       <th id="toggle">Status: n/d         Temporizador: <span id="time">02:00</span></th>
       <td>     
       	<label class="switch">
-		  <input type="checkbox" id="bomba" onchange="if(getElementById('bomba').checked){starta();} else{}">
+		  <input type="checkbox" id="check" onchange="if(getElementById('check').checked){starta();} else{}">
 		  <span class="slider round"></span>
 		</label>
 	  </td>
