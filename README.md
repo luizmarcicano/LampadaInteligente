@@ -7,13 +7,18 @@ O Projeto consiste em transformar uma lâmpada comum em inteligente, controlando
 
 
 
+Tecnologias utilizadas:
+- Arduino - https://www.arduino.cc/
+- MQTT - http://mqtt.org/
+- Paho - https://www.eclipse.org/paho/
+- Heroku - https://www.heroku.com/about
+- Adafruit - https://io.adafruit.com
 
-- 📋
-- :basecamp: 
-- 🆘 
-- 📫 
-  - [LinkedIn](https://www.linkedin.com/in/luiz-guilherme-lima-marcicano-2889a2170/)
-  - Email: luiz.marcicano@gmail.com
+
+#
+Para utilizar, basta fazer a montagem como descrita no documento, e inserir o código .io no seu arduíno, e acessar o site indicado abaixo:
+#### 💻 Site para controlar o módulo de lâmpada
+  - [Heroku](https://lampadainteligente.herokuapp.com/)
 
 
 
