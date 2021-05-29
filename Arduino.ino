@@ -86,6 +86,9 @@ void setup() {
 void loop() {
   mantemConexoes();
   enviaValores();
+  if(pinSensorS > 20){
+    digitalWrite(pinLampada, HIGH);
+  }
   MQTT.loop();
 }
 
